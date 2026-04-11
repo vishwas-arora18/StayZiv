@@ -63,9 +63,9 @@ main().catch(err => console.log(err));
 async function main() {
   await mongoose.connect(mongoURL);
 }
-app.get("/", (req, res)=>{
-    res.send("Hi, I am root");
-})
+// app.get("/", (req, res)=>{
+//     res.send("Hi, I am root");
+// })
 app.use("/listings",listingRouter);
 app.use("/listings/:id/reviews", reviewsRouter);
 app.use("/", userRouter);

@@ -13,11 +13,18 @@ router.route("/")
 
 //New Route
 router.get("/new",isLoggedIn, listingController.renderNewForm)
+//search route
+router.get("/search", async (req, res)=>{
+    let {query} = req.query;
+    let listings = await Listing.find({
+        title : { $regex : query, $options : "i"}
+    });
+    res.render("listings/index.ejs", {allListings : listings});
+} )
 router.route("/:id")
 .get(wrapAsync(listingController.showListing))
 .put(isLoggedIn, isOwner, upload.single('listing[image]'), validateListing, wrapAsync(listingController.updateListing))
 .delete(isLoggedIn, isOwner, wrapAsync(listingController.destroyListing));
-
 //Edit route
 router.get("/:id/edit", isLoggedIn, isOwner, wrapAsync(listingController.renderEditForm));
 module.exports = router;
