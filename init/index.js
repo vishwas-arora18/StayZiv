@@ -1,9 +1,10 @@
+require("dotenv").config();
 const mongoose = require("mongoose");
 const initData = require("./data.js");
 const Listing = require("../models/listing.js");
 const getCoords = require("../utils/geocode");
 
-const mongoURL = "mongodb://127.0.0.1:27017/wanderlust";
+const mongoURL = process.env.ATLASDB_URL;
 
 main()
   .then(() => {
@@ -28,7 +29,7 @@ const initDB = async () => {
 
       updatedData.push({
         ...obj,
-        owner: "69cdf953fa1e9bab0c182583",
+        owner: "69dbe8f97152aa1d73b6b9e4",
         latitude: coords.lat,
         longitude: coords.lng,
       });
@@ -38,7 +39,7 @@ const initDB = async () => {
       console.log(`❌ Error for ${obj.title}`);
       updatedData.push({
         ...obj,
-        owner: "69cdf953fa1e9bab0c182583",
+        owner: "69dbe8f97152aa1d73b6b9e4",
         latitude: 28.6139,
         longitude: 77.2090,
       });

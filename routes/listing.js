@@ -19,7 +19,7 @@ router.get("/search", async (req, res)=>{
     let listings = await Listing.find({
         title : { $regex : query, $options : "i"}
     });
-    res.render("listings/index.ejs", {allListings : listings});
+    res.render("listings/index.ejs", { allListings: listings, title: `StayZiv | Search results for "${query}"` });
 } )
 router.route("/:id")
 .get(wrapAsync(listingController.showListing))

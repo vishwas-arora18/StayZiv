@@ -1,4 +1,4 @@
-# 🌍 Wanderlust Project
+# 🌍 StayZiv Project
 
 A full-stack travel listing web application where users can explore, create, and review travel stays.
 
@@ -27,7 +27,7 @@ A full-stack travel listing web application where users can explore, create, and
 
 ## 📂 Project Structure
 
-wanderlust-project/
+StayZiv-project/
 
 * models/        → Mongoose schemas
 * routes/        → All routes
@@ -42,10 +42,10 @@ wanderlust-project/
 ## ⚙️ Installation & Setup
 
 1. Clone the repository
-   git clone https://github.com/vishwas-arora18/wanderlust-project.git
+   git clone https://github.com/vishwas-arora18/StayZiv-project.git
 
 2. Go to project folder
-   cd wanderlust-project
+   cd StayZiv-project
 
 3. Install dependencies
    npm install
